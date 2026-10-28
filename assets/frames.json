@@ -1,0 +1,198 @@
+[
+ {
+  "app": "prompt",
+  "id": "ph-home",
+  "caption": "Your prompts, pinned first, with an Open bar for your AI apps",
+  "w": 380,
+  "h": 822
+ },
+ {
+  "app": "prompt",
+  "id": "ph-fill",
+  "caption": "Fill in the blanks, then copy",
+  "w": 380,
+  "h": 822
+ },
+ {
+  "app": "prompt",
+  "id": "ph-view",
+  "caption": "A prompt with Copy & open in Claude",
+  "w": 380,
+  "h": 822
+ },
+ {
+  "app": "prompt",
+  "id": "ph-edit",
+  "caption": "Edit with bold, lists, headings and {{blanks}}",
+  "w": 380,
+  "h": 822
+ },
+ {
+  "app": "prompt",
+  "id": "ph-library",
+  "caption": "100 ready prompts in ten categories",
+  "w": 380,
+  "h": 822
+ },
+ {
+  "app": "prompt",
+  "id": "ph-history",
+  "caption": "Every version kept, one tap to restore",
+  "w": 380,
+  "h": 822
+ },
+ {
+  "app": "prompt",
+  "id": "ph-profile",
+  "caption": "Your most-used four and a year of prompting",
+  "w": 380,
+  "h": 822
+ },
+ {
+  "app": "prompt",
+  "id": "ph-achievements",
+  "caption": "Eleven achievements in five tiers",
+  "w": 380,
+  "h": 822
+ },
+ {
+  "app": "prompt",
+  "id": "ph-card",
+  "caption": "Your profile as a story-sized card",
+  "w": 380,
+  "h": 822
+ },
+ {
+  "app": "prompt",
+  "id": "ph-import",
+  "caption": "Import from spreadsheets, Notion, JSON and Markdown",
+  "w": 380,
+  "h": 822
+ },
+ {
+  "app": "prompt",
+  "id": "ph-lock",
+  "caption": "App lock with fingerprint or screen lock",
+  "w": 380,
+  "h": 822
+ },
+ {
+  "app": "prompt",
+  "id": "ph-news",
+  "caption": "What’s new, once after each update",
+  "w": 380,
+  "h": 822
+ },
+ {
+  "app": "watch",
+  "id": "wh-diary",
+  "caption": "The diary: every viewing a ticket stub",
+  "w": 380,
+  "h": 823
+ },
+ {
+  "app": "watch",
+  "id": "wh-find",
+  "caption": "Find films, series and anime, trending first",
+  "w": 380,
+  "h": 823
+ },
+ {
+  "app": "watch",
+  "id": "wh-log",
+  "caption": "Half stars, a heart, a review",
+  "w": 380,
+  "h": 823
+ },
+ {
+  "app": "watch",
+  "id": "wh-entry",
+  "caption": "A logged film with its review",
+  "w": 380,
+  "h": 823
+ },
+ {
+  "app": "watch",
+  "id": "wh-with",
+  "caption": "Watched with Sam and Priya",
+  "w": 380,
+  "h": 822
+ },
+ {
+  "app": "watch",
+  "id": "wh-episodes",
+  "caption": "Episode by episode, season by season",
+  "w": 380,
+  "h": 822
+ },
+ {
+  "app": "watch",
+  "id": "wh-watchlist",
+  "caption": "Up next: the watchlist as a poster wall",
+  "w": 380,
+  "h": 823
+ },
+ {
+  "app": "watch",
+  "id": "wh-pick",
+  "caption": "Can’t decide? Pick for me",
+  "w": 380,
+  "h": 823
+ },
+ {
+  "app": "watch",
+  "id": "wh-profile",
+  "caption": "Your profile and favourite four",
+  "w": 380,
+  "h": 822
+ },
+ {
+  "app": "watch",
+  "id": "wh-year",
+  "caption": "A year of watching and how you rate",
+  "w": 380,
+  "h": 822
+ },
+ {
+  "app": "watch",
+  "id": "wh-buddies",
+  "caption": "Movie buddies and achievements",
+  "w": 380,
+  "h": 822
+ },
+ {
+  "app": "watch",
+  "id": "wh-recap",
+  "caption": "The recap: any month as a story",
+  "w": 380,
+  "h": 823
+ },
+ {
+  "app": "watch",
+  "id": "wh-story-strip",
+  "caption": "October as a film-strip story",
+  "w": 380,
+  "h": 676
+ },
+ {
+  "app": "watch",
+  "id": "wh-story-tickets",
+  "caption": "October as tickets, Velvet palette",
+  "w": 380,
+  "h": 676
+ },
+ {
+  "app": "watch",
+  "id": "wh-story-spot",
+  "caption": "October in the spotlight, Neon palette",
+  "w": 380,
+  "h": 676
+ },
+ {
+  "app": "watch",
+  "id": "wh-import",
+  "caption": "Bring your history from eight apps",
+  "w": 380,
+  "h": 823
+ }
+]
