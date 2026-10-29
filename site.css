@@ -45,7 +45,7 @@ a { color: inherit; }
 .accent { color: var(--accent); }
 .link { text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 0.22em; text-decoration-thickness: 0.08em; transition: text-decoration-color 180ms ease; }
 @media (hover: hover) and (pointer: fine) { .link:hover { text-decoration-color: currentColor; } }
-.h2 { font-size: var(--s-head); font-weight: 500; letter-spacing: -0.01em; line-height: 1.15; }
+.h2 { font-size: var(--s-head); font-weight: 500; letter-spacing: -0.01em; line-height: 1.3; }
 
 /* ---------- hero: the band, the line, the sheet ---------- */
 .band { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: var(--gap); padding-top: 20px; font-size: var(--s-body); }
@@ -56,12 +56,13 @@ a { color: inherit; }
 .b-links { grid-column: 7; display: grid; justify-items: end; align-content: start; gap: 2px; }
 .button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 18px; margin-top: 10px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); font-weight: 700; text-decoration: none; transition: transform 140ms var(--ease-out), background-color 180ms ease; }
 .button:active { transform: scale(0.96); }
+.hero-cta { display: none; }
 @media (hover: hover) and (pointer: fine) { .button:hover { background: #F6C76E; } }
 .display { margin-top: clamp(64px, 9vh, 120px); font-size: var(--s-display); font-weight: 700; line-height: 0.95; letter-spacing: -0.035em; max-width: 17ch; }
 
 .sheet { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 40px var(--gap); margin-top: clamp(48px, 7vh, 88px); align-items: start; }
 .frame { position: relative; transition: opacity var(--t-ui) ease; }
-.run { display: block; font-size: var(--s-body); font-weight: 700; margin-bottom: 8px; }
+.run { display: block; font-size: var(--s-body); font-weight: 700; margin-bottom: 8px; white-space: nowrap; }
 .run small { font-weight: 400; color: var(--muted); font-size: var(--s-body); }
 .frame.no-run { padding-top: calc(var(--s-body) * 1.5 + 8px); }
 .shot { display: block; width: 100%; position: relative; }
@@ -69,7 +70,7 @@ a { color: inherit; }
 .shot:active img { transform: scale(0.98); }
 @media (hover: hover) and (pointer: fine) { .shot:hover img { transform: translateY(-4px); } }
 /* The grease-pencil heart on the frames worth a look. */
-.mark { position: absolute; top: -10px; right: -8px; width: 30px; height: 30px; pointer-events: none; }
+.mark { position: absolute; top: calc(var(--s-body) * 1.5 - 4px); right: -10px; width: 34px; height: 34px; pointer-events: none; transform: rotate(8deg); }
 .mark svg { width: 100%; height: 100%; display: block; }
 .sheet.dim-prompt .frame[data-app="prompt"], .sheet.dim-watch .frame[data-app="watch"] { opacity: 0.3; }
 
@@ -92,8 +93,8 @@ a { color: inherit; }
 
 /* ---------- get the apps: two narrow columns of two-ended rows ---------- */
 .get { margin-top: var(--section); }
-.get-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 520px)); justify-content: space-between; gap: 40px clamp(32px, 6vw, 120px); margin-top: 32px; }
-.rows { display: grid; }
+.get-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); margin-top: 32px; }
+.rows { display: grid; align-content: start; background: var(--surface); padding: clamp(20px, 2.4vw, 32px); }
 .app { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 20px; align-items: center; margin-bottom: 20px; }
 .app img { width: 96px; height: 96px; border-radius: 22px; }
 .app > span { display: grid; gap: 4px; }
@@ -131,7 +132,7 @@ a { color: inherit; }
 .faq-list button[aria-selected="true"] { color: var(--ink); }
 .faq-list button[aria-selected="true"]::before { background: var(--accent); }
 @media (hover: hover) and (pointer: fine) { .faq-list button:hover { color: var(--ink); } }
-.faq-answer { grid-column: 7 / -1; position: sticky; top: 120px; font-size: var(--s-head); line-height: 1.3; max-width: 30ch; transition: opacity 150ms ease; }
+.faq-answer { grid-column: 7 / -1; position: sticky; top: 120px; min-height: 260px; padding: clamp(24px, 3vw, 40px); background: var(--surface); font-size: var(--s-head); line-height: 1.3; transition: opacity 150ms ease; }
 .faq-answer.is-swapping { opacity: 0; }
 .faq-inline { display: none; }
 
@@ -173,10 +174,10 @@ a { color: inherit; }
 /* ---------- phone ---------- */
 @media (max-width: 40em) {
   .band { grid-template-columns: 1fr 1fr; gap: 14px 12px; }
-  .b-name { grid-column: 1; } .b-links { grid-column: 2; }
+  .b-name { grid-column: 1; grid-row: 1; } .b-links { grid-column: 2; grid-row: 1; }
   .b-what { grid-column: 1 / -1; max-width: none; }
-  .b-list { font-size: 0.9375rem; }
-  .b-list:nth-of-type(1) { grid-column: 1; } .b-list:nth-of-type(2) { grid-column: 2; }
+  /* The two feature lists repeat "Get the apps" further down; a phone's first screen doesn't need them. */
+  .b-list { display: none; }
   .display { margin-top: 56px; font-size: clamp(2.4rem, 11vw, 3.4rem); }
   .sheet { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 12px; margin-top: 40px; }
   .get-cols { grid-template-columns: 1fr; }
@@ -187,7 +188,8 @@ a { color: inherit; }
   .record { margin-top: 64px; gap: 16px; }
   .app { grid-template-columns: 72px minmax(0, 1fr); gap: 16px; }
   .app img { width: 72px; height: 72px; border-radius: 18px; }
-  .b-links .button { margin-top: 6px; }
+  .b-links .button { display: none; }
+  .hero-cta { display: inline-flex; margin-top: 24px; }
   .foot { grid-template-columns: 1fr; gap: 8px; margin-top: 20svh; padding-bottom: 24px; }
   .foot nav { justify-content: flex-start; }
   .foot-right { text-align: left; }

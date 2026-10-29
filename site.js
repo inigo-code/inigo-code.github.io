@@ -34,7 +34,7 @@ const FEATURES = [
   ['watch', 'Spotlight stories', 'wh-story-spot'],
   ['watch', 'Import from eight apps', 'wh-import'],
 ];
-const HEART = '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 27.5c-.6 0-11.5-6.6-11.5-14.2C4.5 9 7.4 6 11 6c2.2 0 3.9 1.1 5 2.8C17.1 7.1 18.8 6 21 6c3.6 0 6.5 3 6.5 7.3C27.5 20.9 16.6 27.5 16 27.5z" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg>';
+const HEART = '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 27.5c-.6 0-11.5-6.6-11.5-14.2C4.5 9 7.4 6 11 6c2.2 0 3.9 1.1 5 2.8C17.1 7.1 18.8 6 21 6c3.6 0 6.5 3 6.5 7.3C27.5 20.9 16.6 27.5 16 27.5z" fill="currentColor" stroke="#0E0D10" stroke-width="2.2" stroke-linejoin="round"/></svg>';
 const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 
 (async () => {
