@@ -8,153 +8,131 @@
   <meta name="theme-color" content="#0E0D10">
   <meta property="og:title" content="Heart Apps">
   <meta property="og:description" content="Prompt Heart and Watch Heart: two free Android apps, made with heart.">
-  <meta property="og:image" content="https://inigo-code.github.io/assets/frames/ph-home-l.webp">
+  <meta property="og:image" content="https://inigo-code.github.io/assets/ph-home.webp">
   <link rel="icon" href="assets/prompt-heart.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="heart.css">
   <link rel="stylesheet" href="site.css">
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <main id="top">
 
-  <!-- The text band: who, what, where to get them. Then the contact sheet. -->
-  <section class="hero wrap" aria-labelledby="hero-title">
-    <header class="band">
-      <p class="b-name"><a href="#top" class="link">Heart Apps</a></p>
-      <p class="b-what">Two free Android apps by Inigo. No ads, no tracking, nothing to buy.</p>
-      <ul class="b-list" aria-label="Prompt Heart">
-        <li><a class="link" href="https://inigo-code.github.io/prompt-heart-site/">Prompt Heart</a></li>
-        <li class="soft">AI prompts, one tap away</li>
-        <li class="soft">100 ready prompts</li>
-        <li class="soft">Fill in the blanks, then copy</li>
-      </ul>
-      <ul class="b-list" aria-label="Watch Heart">
-        <li><a class="link" href="https://inigo-code.github.io/watch-heart-site/">Watch Heart</a></li>
-        <li class="soft">Films, series and anime</li>
-        <li class="soft">Every viewing a ticket</li>
-        <li class="soft">Each month a story</li>
-      </ul>
-      <p class="b-links"><a class="link" href="https://github.com/inigo-code">GitHub</a><a class="link" href="mailto:inigo@tosstheworld.org?subject=Heart%20Apps">Write to Inigo</a><a class="button" href="#get">Get the apps</a></p>
-    </header>
-    <h1 id="hero-title" class="display" data-rise>Two free apps,<br> made with heart</h1>
-    <a class="button hero-cta" href="#get">Get the apps</a>
+  <header class="bar wrap">
+    <a class="brand" href="#top" aria-label="Heart Apps, back to top"><span class="pair" aria-hidden="true"><img src="assets/prompt-heart.png" width="40" height="40" alt=""><img src="assets/watch-heart.png" width="40" height="40" alt=""></span>Heart Apps</a>
+    <nav aria-label="Sections">
+      <a href="#apps">The apps</a>
+      <a href="#promises">Promises</a>
+      <a href="#questions">Questions</a>
+      <a href="https://github.com/inigo-code">GitHub</a>
+    </nav>
+    <a class="button button-small" href="#apps">Get the apps</a>
+  </header>
 
-    <div class="sheet" id="sheet" aria-label="Screens from both apps">
-      <!-- Filled from assets/frames.json; without script, this static run shows. -->
-      <figure class="frame"><span class="run">Prompt Heart</span><button type="button" class="shot" data-id="ph-home"><img src="assets/frames/ph-home-s.webp" width="380" height="822" alt="Your prompts, pinned first, with an Open bar for your AI apps"></button></figure>
-      <figure class="frame"><button type="button" class="shot" data-id="ph-fill"><img src="assets/frames/ph-fill-s.webp" width="380" height="822" alt="Fill in the blanks, then copy"></button></figure>
-      <figure class="frame"><button type="button" class="shot" data-id="ph-library"><img src="assets/frames/ph-library-s.webp" width="380" height="822" alt="100 ready prompts in ten categories"></button></figure>
-      <figure class="frame"><span class="run">Watch Heart</span><button type="button" class="shot" data-id="wh-diary"><img src="assets/frames/wh-diary-s.webp" width="380" height="822" alt="The diary: every viewing a ticket stub"></button></figure>
-    </div>
+  <section class="intro wrap" aria-labelledby="hero-title">
+    <h1 id="hero-title" class="h1" data-reveal>Two free apps,<br> made with heart</h1>
+    <p class="lede" data-reveal style="--i:1">Prompt Heart keeps the AI prompts that work. Watch Heart keeps everything you watch. Both are free for Android, with no ads and nothing to buy.</p>
   </section>
 
-  <!-- Everything they do, as spines on a shelf; pointing at one shows its screen. -->
-  <section id="features" class="shelf-sec wrap" aria-labelledby="shelf-title">
-    <div class="shelf-head">
-      <h2 id="shelf-title" class="h2">Everything they do</h2>
-      <p class="soft">Amber is Prompt Heart, rose is Watch Heart. Each one opens its screen.</p>
-    </div>
-    <div class="shelf-row">
-      <ul class="shelf" id="shelf"></ul>
-      <figure class="preview" id="preview" aria-live="polite">
-        <img id="preview-img" src="assets/frames/ph-fill-l.webp" width="780" height="1688" alt="Fill in the blanks, then copy">
-        <figcaption id="preview-cap">Prompt Heart · Fill in the blanks, then copy</figcaption>
-      </figure>
-    </div>
+  <!-- The two apps, each on its own field of colour, each with one screen -->
+  <section id="apps" class="apps wrap" aria-label="The apps">
+    <article class="app app-ph" aria-labelledby="ph-title" data-reveal style="--i:2">
+      <div class="app-text">
+        <img class="app-icon" src="assets/prompt-heart.png" width="72" height="72" alt="">
+        <h2 id="ph-title" class="h2">Prompt Heart</h2>
+        <p class="app-line">Your AI prompts, one tap away.</p>
+        <ul class="ticks">
+          <li>Fill in the blanks, then copy</li>
+          <li>Open ChatGPT, Claude or Gemini in one tap</li>
+          <li>100 ready prompts to start from</li>
+        </ul>
+        <p class="actions">
+          <a class="button" href="https://inigo-code.github.io/prompt-heart-site/fdroid.html">Get Prompt Heart</a>
+          <a class="link" href="https://inigo-code.github.io/prompt-heart-site/">See what it does</a>
+        </p>
+      </div>
+      <figure class="app-shot phone"><img src="assets/ph-home.webp" width="780" height="1688" alt="Prompt Heart's home screen: pinned prompts with their categories and an Open bar for ChatGPT, Claude and Gemini" fetchpriority="high"></figure>
+    </article>
+
+    <article class="app app-wh" aria-labelledby="wh-title" data-reveal style="--i:3">
+      <div class="app-text">
+        <img class="app-icon" src="assets/watch-heart.png" width="72" height="72" alt="">
+        <h2 id="wh-title" class="h2">Watch Heart</h2>
+        <p class="app-line">A diary for films, series and anime.</p>
+        <ul class="ticks">
+          <li>Half stars, hearts and reviews</li>
+          <li>Import from Letterboxd, IMDb and Trakt</li>
+          <li>Each month as an Instagram story</li>
+        </ul>
+        <p class="actions">
+          <a class="button" href="https://inigo-code.github.io/watch-heart-site/fdroid.html">Get Watch Heart</a>
+          <a class="link" href="https://inigo-code.github.io/watch-heart-site/">See what it does</a>
+        </p>
+      </div>
+      <figure class="app-shot phone"><img src="assets/wh-diary.webp" width="780" height="1689" alt="Watch Heart's diary: October as a reel of film, each viewing a ticket stub with its poster, stars and a heart"></figure>
+    </article>
   </section>
 
-  <!-- Where to get them -->
-  <section id="get" class="get wrap" aria-labelledby="get-title">
-    <h2 id="get-title" class="h2">Get the apps</h2>
-    <div class="get-cols">
-      <ul class="rows" aria-label="Prompt Heart">
-        <li class="app"><img src="assets/prompt-heart.png" width="96" height="96" alt="The Prompt Heart icon"><span><strong>Prompt Heart</strong><span class="soft">Your AI prompts, one tap away. Save them, fill in the blanks and open ChatGPT, Claude or Gemini.</span></span></li>
-        <li><a class="row" href="https://inigo-code.github.io/prompt-heart-site/fdroid.html"><span class="dot dot-ph"></span><span class="name accent">Get it on F-Droid</span><span class="val">updates by themselves</span></a></li>
-        <li><a class="row" href="https://github.com/inigo-code/prompt-heart/releases/download/v1.6.0/promptheart-1.6.0.apk"><span class="dot dot-ph"></span><span class="name">Download the APK</span><span class="val nums">v1.6.0</span></a></li>
-        <li><a class="row" href="https://inigo-code.github.io/prompt-heart-site/"><span class="dot dot-ph"></span><span class="name">The website</span><span class="val">prompt-heart-site</span></a></li>
-        <li><a class="row" href="https://github.com/inigo-code/prompt-heart"><span class="dot dot-ph"></span><span class="name">Releases and source</span><span class="val">GitHub</span></a></li>
-        <li><a class="row" href="https://inigo-code.github.io/prompt-heart-site/privacy.html"><span class="dot dot-ph"></span><span class="name">Privacy policy</span><span class="val">what's kept, and where</span></a></li>
-      </ul>
-      <ul class="rows" aria-label="Watch Heart">
-        <li class="app"><img src="assets/watch-heart.png" width="96" height="96" alt="The Watch Heart icon"><span><strong>Watch Heart</strong><span class="soft">A diary for every film, series and anime you watch, and each month as a story to share.</span></span></li>
-        <li><a class="row" href="https://inigo-code.github.io/watch-heart-site/fdroid.html"><span class="dot dot-wh"></span><span class="name accent">Get it on F-Droid</span><span class="val">updates by themselves</span></a></li>
-        <li><a class="row" href="https://github.com/inigo-code/watch-heart/releases/latest/download/watch-heart.apk"><span class="dot dot-wh"></span><span class="name">Download the APK</span><span class="val nums">v1.1.0</span></a></li>
-        <li><a class="row" href="https://inigo-code.github.io/watch-heart-site/"><span class="dot dot-wh"></span><span class="name">The website</span><span class="val">watch-heart-site</span></a></li>
-        <li><a class="row" href="https://github.com/inigo-code/watch-heart"><span class="dot dot-wh"></span><span class="name">Releases and source</span><span class="val">GitHub</span></a></li>
-        <li><a class="row" href="https://inigo-code.github.io/watch-heart-site/privacy.html"><span class="dot dot-wh"></span><span class="name">Privacy policy</span><span class="val">what's kept, and where</span></a></li>
-      </ul>
+  <!-- What both apps promise -->
+  <section id="promises" class="section wrap" aria-labelledby="promises-title">
+    <div class="head">
+      <h2 id="promises-title" class="h2" data-reveal>The same four promises</h2>
+      <p data-reveal style="--i:1">Different apps, one way of making them.</p>
     </div>
+    <dl class="promises">
+      <div data-reveal><dt class="h3">Free, for good</dt><dd>No ads, no subscriptions, no paid extras. Nothing is held back for a later price.</dd></div>
+      <div data-reveal style="--i:1"><dt class="h3">Your phone first</dt><dd>Everything works offline and stays on your phone. No analytics and no tracking.</dd></div>
+      <div data-reveal style="--i:2"><dt class="h3">Sync if you want it</dt><dd>A free account copies your data to your other phones. Delete it from the app any time.</dd></div>
+      <div data-reveal style="--i:3"><dt class="h3">Out in the open</dt><dd>Every release is on GitHub with its notes, and both apps update through F-Droid.</dd></div>
+    </dl>
   </section>
 
   <!-- Who makes them -->
-  <section id="about" class="about wrap" aria-labelledby="about-title">
-    <div class="about-row">
-      <dl class="facts">
-        <div><dt>Made by</dt><dd>Inigo</dd></div>
-        <div><dt>Apps</dt><dd>Two, both free</dd></div>
-        <div><dt>First release</dt><dd>October 2026</dd></div>
-      </dl>
-      <div class="about-text">
-        <h2 id="about-title" class="h2">Made by Inigo</h2>
-        <p class="lead">Prompt Heart keeps the AI prompts that work, ready to copy into whichever app you open. Watch Heart keeps every film, series and anime you watch, and turns each month into a story. Both work offline, keep your data on your phone first, and will never show an ad.</p>
-      </div>
-    </div>
-    <div class="about-row record">
-      <p class="record-word">Releases</p>
-      <div class="record-lists">
-        <ul aria-label="Prompt Heart releases">
-          <li><span>Prompt Heart 1.6.0</span><span class="soft nums">27 Oct</span></li>
-          <li><span>Prompt Heart 1.5.0</span><span class="soft nums">26 Oct</span></li>
-          <li><span>Prompt Heart 1.4.0</span><span class="soft nums">26 Oct</span></li>
-          <li><span>Prompt Heart 1.3.0</span><span class="soft nums">26 Oct</span></li>
-          <li><span>Prompt Heart 1.2.0</span><span class="soft nums">26 Oct</span></li>
-          <li><span>Prompt Heart 1.1.0</span><span class="soft nums">26 Oct</span></li>
-        </ul>
-        <ul aria-label="Watch Heart releases">
-          <li><span>Watch Heart 1.1.0</span><span class="soft nums">28 Oct</span></li>
-          <li><span>Watch Heart 1.0.0</span><span class="soft nums">27 Oct</span></li>
-        </ul>
+  <section class="section wrap" aria-labelledby="about-title">
+    <div class="note">
+      <h2 id="about-title" class="h2" data-reveal>Made by Inigo</h2>
+      <div data-reveal style="--i:1">
+        <div class="copy">
+          <p>I make apps I want on my own phone. Prompt Heart came from good prompts lost in chats and screenshots. Watch Heart came from wanting one diary for the film on Friday and the anime at 1 am.</p>
+          <p>Ideas, bugs and questions are all welcome. I read every message.</p>
+        </div>
+        <p class="actions"><a class="button button-tone" href="mailto:inigo@tosstheworld.org?subject=Heart%20Apps">Write to Inigo</a><a class="link" href="https://github.com/inigo-code">github.com/inigo-code</a></p>
       </div>
     </div>
   </section>
 
-  <!-- Questions: the list on the left, one answer on the right -->
-  <section id="questions" class="faq wrap" aria-labelledby="faq-title">
-    <div class="faq-list" role="tablist" aria-orientation="vertical" aria-labelledby="faq-title">
-      <h2 id="faq-title" class="faq-head">Questions</h2>
-      <button role="tab" aria-selected="true" aria-controls="faq-answer" data-a="Yes. Both apps are free, with no ads, no subscriptions and no paid extras, and that won’t change.">Are they really free?</button>
-      <button role="tab" aria-selected="false" aria-controls="faq-answer" data-a="No. Everything works without one. An account only adds sync, so your prompts or your diary follow you to another phone.">Do I need an account?</button>
-      <button role="tab" aria-selected="false" aria-controls="faq-answer" data-a="On your phone first. If you sign in, a copy is kept in your own private account, which only you can read. Each app’s privacy policy lists exactly what is kept.">Where is my data kept?</button>
-      <button role="tab" aria-selected="false" aria-controls="faq-answer" data-a="Add an app’s F-Droid repository once and new versions arrive like any other app. Smaller improvements also arrive inside the app, with a note on what’s new.">How do updates arrive?</button>
-      <button role="tab" aria-selected="false" aria-controls="faq-answer" data-a="Not yet. For now you install them from F-Droid or the APK on GitHub; Google Play is next.">Are they on Google Play?</button>
-      <button role="tab" aria-selected="false" aria-controls="faq-answer" data-a="They’re Android apps. There is no iPhone version.">Is there an iPhone version?</button>
-      <button role="tab" aria-selected="false" aria-controls="faq-answer" data-a="In either app, open Settings and choose Delete account. Each app’s website also explains how to ask for deletion without the app.">How do I delete my account?</button>
+  <!-- Questions -->
+  <section id="questions" class="section wrap" aria-labelledby="faq-title">
+    <div class="faq">
+      <div class="head"><h2 id="faq-title" class="h2" data-reveal>Questions</h2></div>
+      <div class="faq-list" data-reveal style="--i:1">
+        <details name="faq" open><summary>Are they really free?</summary><p>Yes. Both apps are free, with no ads, no subscriptions and no paid extras, and that won’t change.</p></details>
+        <details name="faq"><summary>Do I need an account?</summary><p>No. Everything works without one. An account only adds sync, so your prompts or your diary follow you to another phone.</p></details>
+        <details name="faq"><summary>Where is my data kept?</summary><p>On your phone first. If you sign in, a copy is kept in your own private account, which only you can read. Each app’s privacy policy lists exactly what is kept: <a class="link" href="https://inigo-code.github.io/prompt-heart-site/privacy.html">Prompt Heart</a>, <a class="link" href="https://inigo-code.github.io/watch-heart-site/privacy.html">Watch Heart</a>.</p></details>
+        <details name="faq"><summary>How do I install them?</summary><p>Add the app’s F-Droid repository once and updates arrive like any other app. Or download the APK from GitHub and open it on your phone.</p></details>
+        <details name="faq"><summary>Are they on Google Play or iPhone?</summary><p>Not yet on Google Play; it’s next. They’re Android apps, so there is no iPhone version.</p></details>
+        <details name="faq"><summary>How do I delete my account?</summary><p>In either app, open Settings and choose Delete account. Each app’s website also explains how to ask for deletion without the app.</p></details>
+      </div>
     </div>
-    <p class="faq-answer" id="faq-answer" role="tabpanel" aria-live="polite">Yes. Both apps are free, with no ads, no subscriptions and no paid extras, and that won’t change.</p>
   </section>
 
 </main>
 
-<footer class="foot wrap">
-  <p class="soft">Heart Apps, by Inigo</p>
-  <nav aria-label="Elsewhere"><a class="link" href="https://inigo-code.github.io/prompt-heart-site/">Prompt Heart</a><a class="link" href="https://inigo-code.github.io/watch-heart-site/">Watch Heart</a><a class="link" href="https://github.com/inigo-code">GitHub</a><a class="link" href="mailto:inigo@tosstheworld.org?subject=Heart%20Apps">Contact</a></nav>
-  <p class="soft foot-right">© 2026 · Privacy: <a class="link" href="https://inigo-code.github.io/prompt-heart-site/privacy.html">Prompt</a>, <a class="link" href="https://inigo-code.github.io/watch-heart-site/privacy.html">Watch</a></p>
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot-name" aria-hidden="true">Heart Apps</p>
+    <div class="foot-cols">
+      <nav aria-label="Prompt Heart"><h2>Prompt Heart</h2><a href="https://inigo-code.github.io/prompt-heart-site/">Website</a><a href="https://inigo-code.github.io/prompt-heart-site/fdroid.html">Get it on F-Droid</a><a href="https://github.com/inigo-code/prompt-heart/releases/latest">Download the APK</a><a href="https://inigo-code.github.io/prompt-heart-site/privacy.html">Privacy</a></nav>
+      <nav aria-label="Watch Heart"><h2>Watch Heart</h2><a href="https://inigo-code.github.io/watch-heart-site/">Website</a><a href="https://inigo-code.github.io/watch-heart-site/fdroid.html">Get it on F-Droid</a><a href="https://github.com/inigo-code/watch-heart/releases/latest">Download the APK</a><a href="https://inigo-code.github.io/watch-heart-site/privacy.html">Privacy</a></nav>
+      <nav aria-label="Source"><h2>Source</h2><a href="https://github.com/inigo-code/prompt-heart">Prompt Heart on GitHub</a><a href="https://github.com/inigo-code/watch-heart">Watch Heart on GitHub</a></nav>
+      <nav aria-label="Contact"><h2>Contact</h2><a href="mailto:inigo@tosstheworld.org?subject=Heart%20Apps">inigo@tosstheworld.org</a></nav>
+    </div>
+    <div class="foot-last"><p>© 2026 Inigo. Free apps, no ads.</p><a href="#top">Back to the top</a></div>
+  </div>
 </footer>
 
-<dialog class="loupe" id="loupe" aria-labelledby="loupe-cap">
-  <figure>
-    <img id="loupe-img" src="" alt="" width="780" height="1688">
-    <figcaption id="loupe-cap"></figcaption>
-  </figure>
-  <div class="loupe-ctl">
-    <button type="button" id="loupe-prev" aria-label="Previous screen">‹</button>
-    <button type="button" id="loupe-close" class="close">Close</button>
-    <button type="button" id="loupe-next" aria-label="Next screen">›</button>
-  </div>
-</dialog>
-
-<script src="site.js" defer></script>
+<script src="heart.js" defer></script>
 </body>
 </html>
