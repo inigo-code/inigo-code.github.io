@@ -5,8 +5,8 @@
   --s-h1: clamp(2.5rem, 1rem + 6vw, 6.5rem);
 }
 
-.brand .pair { display: inline-flex; }
-.brand .pair img + img { margin-left: -10px; }
+/* The Heart Apps mark has its own shape, and its heart reaches the corner, so it isn't cut to a rounded square. */
+.brand img { border-radius: 0; }
 
 .intro { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: var(--gap); align-items: end; padding-block: clamp(2.5rem, 7vw, 6rem) clamp(2.5rem, 5vw, 4rem); }
 .intro .lede { max-width: 30ch; padding-bottom: 0.6em; justify-self: end; }
@@ -45,6 +45,5 @@
 }
 @media (max-width: 680px) {
   .apps { grid-template-columns: 1fr; }
-  .brand .pair img { width: 34px; height: 34px; }
   .promises { grid-template-columns: 1fr; gap: 28px; }
 }
