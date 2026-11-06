@@ -48,7 +48,19 @@
   .promises { grid-template-columns: 1fr; gap: 28px; }
 }
 
-/* Five footer columns here: this site also links to Spoolhouse. */
+/* Five footer columns here: Android, Windows and the rest. */
 @media (min-width: 1101px) {
   .foot-cols { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 }
+
+/* The Windows apps: a field of colour each, with one window. */
+.win-apps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); }
+.win-app { display: grid; grid-template-rows: 1fr auto; overflow: hidden; border-radius: var(--radius); background: var(--tone); color: var(--tone-ink); }
+.win-app-text { display: grid; gap: 14px; align-content: start; padding: clamp(1.5rem, 2.6vw, 2.25rem); }
+.win-app .app-icon { border-radius: 0; }
+.win-app .button { background: var(--tone-ink); color: var(--tone); }
+.win-app .actions { margin-top: 6px; }
+.win-app figure { margin-left: clamp(1.5rem, 2.6vw, 2.25rem); overflow: hidden; border-radius: 12px 0 0 0; }
+.win-app figure img { width: 170%; max-width: none; }
+@media (hover: hover) and (pointer: fine) { .win-app .button:hover { background: #2A2730; } }
+@media (max-width: 1100px) { .win-apps { grid-template-columns: 1fr; } .win-app figure img { width: 100%; } }
