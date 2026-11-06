@@ -72,3 +72,8 @@
 /* The photo beside the note. */
 .about-side { display: grid; gap: clamp(1.25rem, 2.5vw, 2rem); align-content: start; }
 .about-photo { display: block; width: min(100%, 280px); height: auto; border-radius: var(--radius); }
+
+/* Which system each app is for. */
+.app-platform { margin-top: -10px; font-size: var(--s-small); font-weight: 700; }
+.win-title { display: flex; align-items: center; gap: 0.32em; }
+.win-logo { flex: none; width: 0.72em; height: 0.72em; fill: #00A4EF; }
