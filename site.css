@@ -74,6 +74,4 @@
 .about-photo { display: block; width: min(100%, 280px); height: auto; border-radius: var(--radius); }
 
 /* Which system each app is for. */
-.app-platform { margin-top: -10px; font-size: var(--s-small); font-weight: 700; }
-.win-title { display: flex; align-items: center; gap: 0.32em; }
-.win-logo { flex: none; width: 0.72em; height: 0.72em; fill: #00A4EF; }
+.button-logo { flex: none; width: 1.15em; height: 1.15em; margin-right: 0.5em; fill: currentColor; vertical-align: -0.2em; }
