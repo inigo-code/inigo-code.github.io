@@ -47,3 +47,8 @@
   .apps { grid-template-columns: 1fr; }
   .promises { grid-template-columns: 1fr; gap: 28px; }
 }
+
+/* Five footer columns here: this site also links to Backlot. */
+@media (min-width: 1101px) {
+  .foot-cols { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
