@@ -68,3 +68,7 @@
 /* Android apps in the footer, with their logos. */
 .foot-app { display: flex; align-items: center; gap: 8px; }
 .foot-app img { flex: none; width: 24px; height: 24px; border-radius: 6px; }
+
+/* The photo beside the note. */
+.about-side { display: grid; gap: clamp(1.25rem, 2.5vw, 2rem); align-content: start; }
+.about-photo { display: block; width: min(100%, 280px); height: auto; border-radius: var(--radius); }
