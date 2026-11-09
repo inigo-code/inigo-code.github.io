@@ -2,6 +2,7 @@
 :root {
   --ph: #F2B84B;
   --wh: #FF5C7A;
+  --kh: #EE8A5B;
   --s-h1: clamp(2.5rem, 1rem + 6vw, 6.5rem);
 }
 
@@ -14,6 +15,8 @@
 .apps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); }
 .app { --tone: var(--ph); display: grid; grid-template-columns: minmax(0, 1fr) minmax(170px, 0.62fr); gap: 20px; padding: clamp(1.75rem, 3.4vw, 3rem) clamp(1.75rem, 3.4vw, 3rem) 0; border-radius: var(--radius); background: var(--tone); color: #121110; overflow: hidden; }
 .app-wh { --tone: var(--wh); }
+/* Kural Heart, the third Android app, spans the row below the first two on wide screens. */
+.app-kh { --tone: var(--kh); grid-column: 1 / -1; grid-template-columns: minmax(0, 1fr) minmax(170px, 0.3fr); }
 .app-text { display: grid; gap: 18px; align-content: start; padding-bottom: clamp(1.75rem, 3.4vw, 3rem); }
 .app-icon { width: 72px; height: 72px; border-radius: 18px; }
 .app .h2 { font-size: clamp(2rem, 1rem + 2.2vw, 3rem); white-space: nowrap; }
@@ -48,9 +51,9 @@
   .promises { grid-template-columns: 1fr; gap: 28px; }
 }
 
-/* Five footer columns here: Android, Windows and the rest. */
+/* Six footer columns here: Android, Windows and the rest. */
 @media (min-width: 1101px) {
-  .foot-cols { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .foot-cols { grid-template-columns: repeat(6, minmax(0, 1fr)); }
 }
 
 /* The Windows apps: a field of colour each, with one window. */
