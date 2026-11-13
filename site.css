@@ -1,45 +1,109 @@
-/* Heart Apps: the two apps side by side, each on its own colour. */
+/* Heart Apps: six apps, each on its own colour. */
 :root {
   --ph: #F2B84B;
   --wh: #FF5C7A;
   --kh: #EE8A5B;
-  --s-h1: clamp(2.5rem, 1rem + 6vw, 6.5rem);
+  --s-h1: clamp(2.75rem, 0.8rem + 6.6vw, 7rem);
+  --glow: color-mix(in srgb, #FF5C7A 26%, transparent);
 }
 
 /* The Heart Apps mark has its own shape, and its heart reaches the corner, so it isn't cut to a rounded square. */
 .brand img { border-radius: 0; }
 
-.intro { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: var(--gap); align-items: end; padding-block: clamp(2.5rem, 7vw, 6rem) clamp(2.5rem, 5vw, 4rem); }
-.intro .lede { max-width: 30ch; padding-bottom: 0.6em; justify-self: end; }
+/* The ground glows in all three Android colours. */
+main::before { background: radial-gradient(42% 60% at 85% 4%, color-mix(in srgb, var(--wh) 26%, transparent), transparent 70%), radial-gradient(40% 55% at 50% -6%, color-mix(in srgb, var(--ph) 22%, transparent), transparent 70%), radial-gradient(40% 55% at 10% 10%, color-mix(in srgb, var(--kh) 18%, transparent), transparent 70%); }
 
-.apps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); }
-.app { --tone: var(--ph); display: grid; grid-template-columns: minmax(0, 1fr) minmax(170px, 0.62fr); gap: 20px; padding: clamp(1.75rem, 3.4vw, 3rem) clamp(1.75rem, 3.4vw, 3rem) 0; border-radius: var(--radius); background: var(--tone); color: #121110; overflow: hidden; }
+/* ---------- the first screen: the promise, then the whole family ---------- */
+.intro { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: var(--gap) var(--gap); align-items: end; padding-block: clamp(3rem, 8vw, 7rem) clamp(2.5rem, 5vw, 4rem); }
+.intro .h1 { line-height: 0.92; }
+.intro .lede { max-width: 30ch; padding-bottom: 0.6em; justify-self: end; color: var(--muted); }
+.intro .lede strong { color: var(--ink); font-weight: 500; }
+.family { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; margin-top: clamp(1.5rem, 3vw, 2.5rem); }
+.family a { display: grid; grid-template-columns: 44px minmax(0, 1fr); align-items: center; gap: 12px; min-height: 72px; padding: 12px 14px; border-radius: 20px; background: color-mix(in srgb, var(--surface) 80%, transparent); box-shadow: inset 0 0 0 1px var(--line); text-decoration: none; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); transition: transform 180ms var(--ease-out), box-shadow 220ms ease, background-color 220ms ease; }
+.family img { width: 44px; height: 44px; border-radius: 12px; transition: transform 300ms var(--ease-out); }
+.family .win img { border-radius: 0; }
+.family strong { display: block; font-weight: 700; line-height: 1.2; }
+.family small { display: block; color: var(--muted); font-size: 0.8125rem; }
+@media (hover: hover) and (pointer: fine) {
+  .family a:hover { transform: translateY(-2px); background: var(--surface); box-shadow: inset 0 0 0 1px var(--line-strong), 0 18px 30px -20px rgb(0 0 0 / 0.7); }
+  .family a:hover img { transform: scale(1.08) rotate(-4deg); }
+}
+
+/* ---------- the Android apps: three fields of colour in a row, each with one screen ---------- */
+.apps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); }
+.app { --tone: var(--ph); display: grid; grid-template-rows: 1fr auto; overflow: hidden; padding: clamp(1.75rem, 2.6vw, 2.5rem) clamp(1.75rem, 2.6vw, 2.5rem) 0; border-radius: var(--radius); background: radial-gradient(90% 60% at 100% 100%, color-mix(in srgb, var(--tone) 70%, #000) 0%, transparent 70%), radial-gradient(120% 80% at 0% 0%, color-mix(in srgb, var(--tone) 80%, #fff), var(--tone) 60%), var(--tone); color: #121110; transition: transform 220ms var(--ease-out), box-shadow 260ms ease; }
 .app-wh { --tone: var(--wh); }
-/* Kural Heart, the third Android app, spans the row below the first two on wide screens. */
-.app-kh { --tone: var(--kh); grid-column: 1 / -1; grid-template-columns: minmax(0, 1fr) minmax(170px, 0.3fr); }
-.app-text { display: grid; gap: 18px; align-content: start; padding-bottom: clamp(1.75rem, 3.4vw, 3rem); }
-.app-icon { width: 72px; height: 72px; border-radius: 18px; }
-.app .h2 { font-size: clamp(2rem, 1rem + 2.2vw, 3rem); white-space: nowrap; }
-.app-line { font-size: var(--s-lede); line-height: 1.35; }
-.app .ticks li::before { border-color: #121110; }
-.app .button { background: #121110; color: var(--tone); }
-@media (hover: hover) and (pointer: fine) { .app .button:hover { background: #2A2730; } }
-.app .actions { margin-top: 8px; }
-.app-shot { align-self: end; width: 100%; padding-bottom: 0; border-radius: 40px 40px 0 0; background: #121110; padding: 9px 9px 0; }
-.app-shot img { border-radius: 32px 32px 0 0; aspect-ratio: 780 / 1250; object-fit: cover; object-position: top; }
+.app-kh { --tone: var(--kh); }
+.app-text { display: grid; gap: 16px; align-content: start; padding-bottom: clamp(1.75rem, 3vw, 2.5rem); }
+.app-icon { width: 64px; height: 64px; border-radius: 17px; box-shadow: 0 10px 22px -10px rgb(0 0 0 / 0.55); }
+.app .h2 { font-size: clamp(2rem, 1rem + 1.8vw, 2.875rem); white-space: nowrap; }
+.app-line { font-size: 1.1875rem; line-height: 1.35; font-weight: 500; }
+.app .ticks li { font-size: 0.96875rem; }
+.app .ticks li::before { background: rgb(18 17 16 / 0.12); }
+.app .ticks li::after { border-color: #121110; }
+.app .button { background: #121110; color: var(--tone); box-shadow: 0 12px 24px -14px rgb(0 0 0 / 0.8); }
+@media (hover: hover) and (pointer: fine) {
+  .app .button:hover { background: #2A2730; }
+  .app:hover { transform: translateY(-2px); box-shadow: 0 30px 50px -30px rgb(0 0 0 / 0.75); }
+  .app:hover .app-shot img { transform: scale(1.03); }
+}
+.app .actions { margin-top: 6px; }
+.app-shot { justify-self: center; align-self: end; width: min(100%, 300px); overflow: hidden; border-radius: 40px 40px 0 0; background: #121110; padding: 9px 9px 0; box-shadow: 0 -20px 50px -30px rgb(0 0 0 / 0.7); }
+.app-shot img { border-radius: 32px 32px 0 0; aspect-ratio: 780 / 860; object-fit: cover; object-position: top; transform-origin: 50% 0; transition: transform 600ms var(--ease-out); }
 
-.promises { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px var(--gap); }
-.promises div { display: grid; gap: 12px; align-content: start; padding-top: 24px; border-top: 6px solid var(--surface-2); }
-.promises div:nth-child(odd) { border-top-color: var(--ph); }
-.promises div:nth-child(even) { border-top-color: var(--wh); }
-.promises dd { max-width: 30ch; }
+/* ---------- the Windows apps: a field of colour each, with one window ---------- */
+.win-apps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); }
+.win-app { display: grid; grid-template-rows: 1fr auto; overflow: hidden; border-radius: var(--radius); background: radial-gradient(120% 80% at 0% 0%, color-mix(in srgb, var(--tone) 80%, #fff), var(--tone) 60%), var(--tone); color: var(--tone-ink); transition: transform 220ms var(--ease-out), box-shadow 260ms ease; }
+.win-app-text { display: grid; gap: 14px; align-content: start; padding: clamp(1.5rem, 2.6vw, 2.25rem); }
+.win-app .app-icon { border-radius: 0; box-shadow: none; }
+.win-app .button { background: var(--tone-ink); color: var(--tone); box-shadow: 0 12px 24px -14px rgb(0 0 0 / 0.8); }
+.win-app .actions { margin-top: 6px; }
+.win-app figure { margin-left: clamp(1.5rem, 2.6vw, 2.25rem); overflow: hidden; border-radius: 14px 0 0 0; box-shadow: 0 -10px 40px -20px rgb(0 0 0 / 0.6); }
+.win-app figure img { width: 170%; max-width: none; transform-origin: 0 0; transition: transform 600ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) {
+  .win-app .button:hover { background: #2A2730; }
+  .win-app:hover { transform: translateY(-2px); box-shadow: 0 30px 50px -30px rgb(0 0 0 / 0.75); }
+  .win-app:hover figure img { transform: scale(1.03); }
+}
 
+/* ---------- the promises: four numbered cards ---------- */
+.promises { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; counter-reset: promise; }
+.promises div { position: relative; display: grid; gap: 12px; align-content: start; padding: 28px 26px 30px; border-radius: 22px; background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; }
+.promises div::before { counter-increment: promise; content: '0' counter(promise); font-family: var(--font-display); font-weight: 700; font-size: 3.25rem; line-height: 1; letter-spacing: -0.04em; color: var(--tone, var(--ph)); }
+.promises div:nth-child(2) { --tone: var(--wh); }
+.promises div:nth-child(3) { --tone: var(--kh); }
+.promises div:nth-child(4) { --tone: #7fb0ff; }
+.promises div::after { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--tone, var(--ph)); }
+.promises dd { max-width: 30ch; color: var(--muted); }
+
+/* ---------- made by Inigo ---------- */
 .note .h2 { align-self: start; }
+.about-side { display: grid; gap: clamp(1.25rem, 2.5vw, 2rem); align-content: start; }
+.about-photo { display: block; width: min(100%, 300px); height: auto; border-radius: var(--radius); box-shadow: var(--shadow); }
+.about-role { display: grid; gap: 4px; }
+.about-role strong { font-size: 1.1875rem; }
+.about-role span { color: var(--muted); }
+.button-logo { flex: none; width: 1.15em; height: 1.15em; margin-right: 0.5em; fill: currentColor; vertical-align: -0.2em; }
 
+/* ---------- the footer: the name and the way to write, then the links ---------- */
+.foot-top { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 28px var(--gap); }
+.foot-contact { display: grid; gap: 4px; justify-items: start; }
+.foot-contact h2 { font-size: var(--s-small); font-weight: 700; color: var(--muted); }
+.foot-contact a { font-size: clamp(1.125rem, 1rem + 0.5vw, 1.375rem); font-weight: 500; white-space: nowrap; }
+.foot-contact .foot-in { margin-top: 6px; font-size: var(--s-body); color: var(--muted); }
+.foot-app { display: flex; align-items: center; gap: 8px; }
+.foot-app img { flex: none; width: 24px; height: 24px; border-radius: 6px; }
+@media (min-width: 1101px) { .foot-cols { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+
+/* ---------- smaller screens ---------- */
 @media (max-width: 1100px) {
-  .app { grid-template-columns: 1fr; }
-  .app-shot { width: min(78%, 330px); justify-self: center; }
-  .app-shot img { aspect-ratio: 780 / 900; }
+  .family { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .apps { grid-template-columns: 1fr; }
+  .app { grid-template-columns: minmax(0, 1fr) minmax(220px, 0.7fr); grid-template-rows: none; gap: 24px; }
+  .app-shot { width: 100%; }
+  .app-shot img { aspect-ratio: 780 / 1000; }
+  .win-apps { grid-template-columns: 1fr; }
+  .win-app figure img { width: 100%; }
 }
 @media (max-width: 960px) {
   .intro { grid-template-columns: 1fr; gap: 24px; }
@@ -47,34 +111,11 @@
   .promises { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 680px) {
-  .apps { grid-template-columns: 1fr; }
-  .promises { grid-template-columns: 1fr; gap: 28px; }
+  .family { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .family a { min-height: 64px; grid-template-columns: 36px minmax(0, 1fr); gap: 10px; padding: 10px 12px; }
+  .family img { width: 36px; height: 36px; border-radius: 10px; }
+  .app { grid-template-columns: 1fr; }
+  .app-shot { width: min(80%, 300px); }
+  .app-shot img { aspect-ratio: 780 / 860; }
+  .promises { grid-template-columns: 1fr; }
 }
-
-/* Six footer columns here: Android, Windows and the rest. */
-@media (min-width: 1101px) {
-  .foot-cols { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-}
-
-/* The Windows apps: a field of colour each, with one window. */
-.win-apps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); }
-.win-app { display: grid; grid-template-rows: 1fr auto; overflow: hidden; border-radius: var(--radius); background: var(--tone); color: var(--tone-ink); }
-.win-app-text { display: grid; gap: 14px; align-content: start; padding: clamp(1.5rem, 2.6vw, 2.25rem); }
-.win-app .app-icon { border-radius: 0; }
-.win-app .button { background: var(--tone-ink); color: var(--tone); }
-.win-app .actions { margin-top: 6px; }
-.win-app figure { margin-left: clamp(1.5rem, 2.6vw, 2.25rem); overflow: hidden; border-radius: 12px 0 0 0; }
-.win-app figure img { width: 170%; max-width: none; }
-@media (hover: hover) and (pointer: fine) { .win-app .button:hover { background: #2A2730; } }
-@media (max-width: 1100px) { .win-apps { grid-template-columns: 1fr; } .win-app figure img { width: 100%; } }
-
-/* Android apps in the footer, with their logos. */
-.foot-app { display: flex; align-items: center; gap: 8px; }
-.foot-app img { flex: none; width: 24px; height: 24px; border-radius: 6px; }
-
-/* The photo beside the note. */
-.about-side { display: grid; gap: clamp(1.25rem, 2.5vw, 2rem); align-content: start; }
-.about-photo { display: block; width: min(100%, 280px); height: auto; border-radius: var(--radius); }
-
-/* Which system each app is for. */
-.button-logo { flex: none; width: 1.15em; height: 1.15em; margin-right: 0.5em; fill: currentColor; vertical-align: -0.2em; }
