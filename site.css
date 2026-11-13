@@ -73,7 +73,6 @@ main::before { background: radial-gradient(42% 60% at 85% 4%, color-mix(in srgb,
 .promises div:nth-child(2) { --tone: var(--wh); }
 .promises div:nth-child(3) { --tone: var(--kh); }
 .promises div:nth-child(4) { --tone: #7fb0ff; }
-.promises div::after { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--tone, var(--ph)); }
 .promises dd { max-width: 30ch; color: var(--muted); }
 
 /* ---------- made by Inigo ---------- */
