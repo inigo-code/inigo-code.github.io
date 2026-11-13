@@ -66,10 +66,10 @@ main::before { background: radial-gradient(42% 60% at 85% 4%, color-mix(in srgb,
   .win-app:hover figure img { transform: scale(1.03); }
 }
 
-/* ---------- the promises: four numbered cards ---------- */
-.promises { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; counter-reset: promise; }
-.promises div { position: relative; display: grid; gap: 12px; align-content: start; padding: 28px 26px 30px; border-radius: 22px; background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; }
-.promises div::before { counter-increment: promise; content: '0' counter(promise); font-family: var(--font-display); font-weight: 700; font-size: 3.25rem; line-height: 1; letter-spacing: -0.04em; color: var(--tone, var(--ph)); }
+/* ---------- the promises: four, each marked in an app's colour ---------- */
+.promises { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(2rem, 3.5vw, 3rem) var(--gap); }
+.promises div { position: relative; display: grid; gap: 10px; align-content: start; padding-top: 24px; border-top: 1px solid var(--line-strong); }
+.promises div::before { content: ''; position: absolute; top: -2px; left: 0; width: 40px; height: 3px; border-radius: 2px; background: var(--tone, var(--ph)); }
 .promises div:nth-child(2) { --tone: var(--wh); }
 .promises div:nth-child(3) { --tone: var(--kh); }
 .promises div:nth-child(4) { --tone: #7fb0ff; }
