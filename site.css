@@ -83,6 +83,8 @@ main::before { background: radial-gradient(42% 60% at 85% 4%, color-mix(in srgb,
 .about-role strong { font-size: 1.1875rem; }
 .about-role span { color: var(--muted); }
 .button-logo { flex: none; width: 1.15em; height: 1.15em; margin-right: 0.5em; fill: currentColor; vertical-align: -0.2em; }
+/* The Google Play mark keeps its colours, on a small dark disc so the yellow wedge shows on any button. */
+.button-logo.button-play { box-sizing: border-box; width: 1.75em; height: 1.75em; margin: 0 0.4em 0 -0.45em; padding: 0.4em 0.38em 0.4em 0.47em; border-radius: 50%; background: #121110; vertical-align: -0.5em; }
 
 /* ---------- the footer: the name and the way to write, then the links ---------- */
 .foot-top { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 28px var(--gap); }
